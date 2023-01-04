@@ -10,15 +10,15 @@ using Microsoft.Extensions.Options;
 
 namespace NovelAi;
 
-public class NovelAiRpc
+public class NovelAiRestfulApi
 {
     private readonly IHttpClientFactory _factory;
 
-    private readonly ILogger<NovelAiRpc> _logger;
+    private readonly ILogger<NovelAiRestfulApi> _logger;
 
-    private readonly NovelAiRpcOption _option;
+    private readonly NovelAiApiOption _option;
 
-    public NovelAiRpc(ILogger<NovelAiRpc> logger, IHttpClientFactory factory, IOptions<NovelAiRpcOption> option)
+    public NovelAiRestfulApi(ILogger<NovelAiRestfulApi> logger, IHttpClientFactory factory, IOptions<NovelAiApiOption> option)
     {
         _logger = logger;
         _factory = factory;

@@ -12,12 +12,12 @@ public class NovelAiController : ControllerBase
 {
     private readonly ILogger<NovelAiController> _logger;
 
-    private readonly NovelAiRpc _rpc;
+    private readonly NovelAiRestfulApi _api;
 
-    public NovelAiController(ILogger<NovelAiController> logger, NovelAiRpc rpc)
+    public NovelAiController(ILogger<NovelAiController> logger, NovelAiRestfulApi rpc)
     {
         _logger = logger;
-        _rpc = rpc;
+        _api = rpc;
     }
 
     [HttpPost(Name = "NovelAi")]
@@ -43,7 +43,7 @@ public class NovelAiController : ControllerBase
         }
         try
         {
-            var image = await _rpc.Invoke(option);
+            var image = await _api.Invoke(option);
             return File(image, "image/png");
         }
         catch (Exception e)

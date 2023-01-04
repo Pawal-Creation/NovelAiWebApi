@@ -3,7 +3,7 @@ using System.Diagnostics.CodeAnalysis;
 
 namespace NovelAi;
 
-public class NovelAiRpcOption
+public class NovelAiApiOption
 {
     [AllowNull]
     public string Authorization { get; set; }

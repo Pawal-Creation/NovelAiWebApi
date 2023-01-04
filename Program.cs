@@ -10,7 +10,7 @@ builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 builder.Services.AddHttpClient();
-builder.Services.AddNovelAiRpc(builder.Configuration);
+builder.Services.AddNovelAiApi(builder.Configuration);
 
 var app = builder.Build();
 
